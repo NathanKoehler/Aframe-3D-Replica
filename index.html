@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <title>A calming scene of a grassy field - Nathan Koehler</title>
+    <meta name="description" content="Landscape Scenery • A-Frame" />
+  </head>
+
+  <body>
+    <a-scene
+      inspector=""
+      keyboard-shortcuts=""
+      screenshot=""
+      vr-mode-ui=""
+      device-orientation-permission-ui=""
+      light=""
+    >
+      <!-- Asset Management System -->
+      <a-assets>
+        <a-asset-item
+          id="windmill"
+          src="assets/Medieval_Windmill_new.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="trees"
+          src="assets/trees2_new.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="terrain"
+          src="assets/terrain4_new.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="grass"
+          src="assets/newgrass3.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="flowers"
+          src="assets/flowers3.glb"
+        ></a-asset-item>
+      </a-assets>
+
+      <!-- Sky -->
+      <a-sky
+        radius="200"
+        theta-length="110"
+        class="environment"
+        material="shader: skyshader; sunPosition: -0.104 0.944 0.312; mieCoefficient: 0; mieDirectionalG: 0.93"
+        visible=""
+        geometry="radius: 300"
+        light="color: #fff9eb; groundColor: #201818; intensity: 1.17"
+      ></a-sky>
+
+      <!-- Global Light -->
+      <a-entity
+        light="type:  hemisphere;  color:  #fffefa;  groundColor:  #943100;  intensity:  0.4;  penumbra:  0.02;  shadowBias:  0.38;  angle:  60.06;  decay:  4.66;  distance:  0.61;  castShadow:  true"
+      ></a-entity>
+
+      <!-- Directional (Windmill) Light -->
+      <a-entity
+        position="24.39 13.52 18"
+        light="color:  #fff0db;  groundColor:  #b23c01;  intensity:  1.55;  penumbra:  0.02;  shadowBias:  0.38;  angle:  60.06;  decay:  4.62;  distance:  0.62;  castShadow:  true"
+      ></a-entity>
+
+      <!-- Windmill -->
+      <a-entity
+        gltf-model="#windmill"
+        position="-10.39 -0.05022 -90.62"
+        rotation="-0.325 46.104 -0.33"
+        scale="0.06 0.06 0.06"
+      ></a-entity>
+
+      <!-- Deformed Terrain -->
+      <a-entity gltf-model="#terrain"></a-entity>
+
+      <!-- Small Grass -->
+      <a-entity gltf-model="#grass"></a-entity>
+
+      <!-- Trees -->
+      <a-entity gltf-model="#trees"></a-entity>
+
+      <!-- Assorted Flowers -->
+      <a-entity gltf-model="#flowers"></a-entity>
+
+      
+    </a-scene>
+  </body>
+</html>
